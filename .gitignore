@@ -2,7 +2,7 @@
 .project
 .settings
 eclipsebin
-
+target
 */target
 pom.xml.*
 release.properties
@@ -12,5 +12,9 @@ release.properties
 *.ipr
 *.iws
 classes
+
+.gradle
+local.properties
+build
 
 .DS_Store

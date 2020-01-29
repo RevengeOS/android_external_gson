@@ -16,6 +16,7 @@
 
 package com.google.gson.annotations;
 
+import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -27,7 +28,7 @@ import java.lang.annotation.Target;
  *
  * <p>This annotation will override any {@link com.google.gson.FieldNamingPolicy}, including
  * the default field naming policy, that may have been set on the {@link com.google.gson.Gson}
- * instance.  A different naming policy can set using the {@code GsonBuilder} class.  See
+ * instance. A different naming policy can set using the {@code GsonBuilder} class. See
  * {@link com.google.gson.GsonBuilder#setFieldNamingPolicy(com.google.gson.FieldNamingPolicy)}
  * for more information.</p>
  *
@@ -76,14 +77,17 @@ import java.lang.annotation.Target;
  * @author Inderjeet Singh
  * @author Joel Leitch
  */
+@Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD, ElementType.METHOD})
 public @interface SerializedName {
 
   /**
-   * @return the desired names of the field when it is deserialized or serialized. All of the specified names will be deserialized from.
-   *   The specified first name is what is used for serialization.
+   * @return the desired name of the field when it is serialized or deserialized
    */
   String value();
+  /**
+   * @return the alternative names of the field when it is deserialized
+   */
   String[] alternate() default {};
 }

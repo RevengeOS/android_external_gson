@@ -16,6 +16,7 @@
 
 package com.google.gson.annotations;
 
+import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -24,7 +25,7 @@ import java.lang.annotation.Target;
 /**
  * An annotation that indicates the version number until a member or a type should be present.
  * Basically, if Gson is created with a version number that exceeds the value stored in the
- * {@code Until} annotation then the field will be ignored from the JSON output.  This annotation
+ * {@code Until} annotation then the field will be ignored from the JSON output. This annotation
  * is useful to manage versioning of your JSON classes for a web-service.
  *
  * <p>
@@ -54,6 +55,7 @@ import java.lang.annotation.Target;
  * @author Joel Leitch
  * @since 1.3
  */
+@Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD, ElementType.TYPE})
 public @interface Until {
